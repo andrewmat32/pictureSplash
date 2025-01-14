@@ -1,0 +1,228 @@
+.title {
+    @include typography('headings', 'h2', 600);
+    text-align: center;
+    margin: 2rem 0;
+    padding: 0;
+    overflow: hidden;
+
+    &-text {
+        @include flexbox(center, center, column, null, $content-gap);
+
+        img {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            transform: rotate(-43deg);
+            opacity: 0.5;
+
+            @media screen and (max-width: map-get($media-queries, tablet-max)) {
+                width: 400px;
+                height: 400px;
+            }
+
+            @media screen and (max-width: map-get($media-queries, mobile-max)) {
+                width: 250px;
+                height: 250px;
+            }
+
+            @media screen and (max-width: map-get($media-queries, mobile-large)) {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        span {
+            @include typography('headings', 'h1', 600);
+            position: relative;
+            transition: color 0.5s, background-color 0.5s;
+            cursor: pointer;
+            text-shadow: 2px 2px 0 rgba($color-main, 0.1);
+        }
+
+        p {
+            @include typography('content', 'larger');
+            text-shadow: 2px 2px 0 rgba($color-main, 0.1);
+            text-align: center;
+            margin: 1rem 0;
+            z-index: 10;
+        }
+
+        span:nth-child(2) {
+
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat( 3, 1fr );
+    grid-gap: 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    @media screen and (max-width: map-get($media-queries, tablet-max)) {
+        grid-template-columns: repeat( 2, 1fr );
+    }
+
+    @media screen and (max-width: map-get($media-queries, mobile-max)) {
+        grid-template-columns: 1fr;
+    }
+
+    img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+
+        @media screen and (max-width: map-get($media-queries, mobile-max)) {
+            height: 300px;
+        }
+
+        &:hover {
+            transform: scale(1.03);
+            cursor: pointer;
+        }
+    }
+}
+
+.no-results {
+    width: 100%;
+    text-align: center;
+    display: none;
+
+    p {
+        @include typography('content', 'larger');
+    }
+}
+
+.type-something {
+    width: 100%;
+    text-align: center;
+    display: none;
+
+    p {
+        @include typography('content', 'larger');
+    }
+}
+
+.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: url('../../images/cursor.svg') 10 10, auto;
+
+    img {
+        height: 80%;
+        object-fit: cover;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        @media screen and (max-width: map-get($media-queries, tablet-max)) {
+            width: 90%;;
+        }
+
+        @media screen and (max-width: map-get($media-queries, mobile-max)) {
+            height: 60%;
+        }
+    }
+}
+
+.search-container {
+    @include flexbox(center, center, row, null, $content-gap);
+    margin: 2rem 0;
+    z-index: 1000;
+
+    input {
+        padding: 1rem;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        font-size: 1rem;
+        box-shadow: 0 2px 2px hsla(0, 0%, 0%, 0.1);
+        background-color: $color-main-light;
+        color: $color-secondary;
+
+        &::placeholder {
+            color: $color-secondary;
+        }
+    }
+
+    button {
+        padding: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 1rem;
+        color: $color-main;
+        background-color: $color-secondary;
+
+        &:hover {
+            color: $color-main;
+            background-color: $color-action;
+
+        }
+    }
+}
+
+.load-more {
+    @include flexbox(center, center, row, null, $content-gap);
+    margin: 2rem 0;
+    display: none;
+
+    button {
+        padding: 1rem 2rem;
+        border: none;
+        background-color: $color-main;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 1rem;
+        color: $color-secondary;
+
+        &:hover {
+            background-color: $color-secondary;
+            color: $color-main;
+        }
+    }
+}
+
+
+#gallery {
+    z-index: 100;
+    position: relative;
+}
+
+.content-container {
+    @include flexbox(center, center, column, null, $content-gap);
+
+    .loader {
+        display: none;
+    }
+}
+
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    --c: linear-gradient(#EDF2F7FF 0 0);
+    --r1: radial-gradient(farthest-side at bottom,#EDF2F7FF 93%,#0000);
+    --r2: radial-gradient(farthest-side at top   ,#EDF2F7FF 93%,#0000);
+    background:
+            var(--c) ,var(--r1),var(--r2),
+            var(--c) ,var(--r1),var(--r2),
+            var(--c) ,var(--r1),var(--r2);
+    background-repeat: no-repeat;
+    animation: l2 1s infinite alternate;
+}
+
+

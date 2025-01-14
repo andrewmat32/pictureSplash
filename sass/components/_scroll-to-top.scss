@@ -1,0 +1,30 @@
+.scroll-to-top {
+    @include position-on-screen(fixed, auto, $padding-to-screen-edge, 0, 150px);
+    background-color: $color-secondary;
+    padding: $padding-content;
+    border-radius: 50%;
+    z-index: 110;
+    box-shadow: $shadow-md;
+    color: $color-main;
+    border: 1px solid $color-secondary;
+
+    @media screen and (max-width: map-get($media-queries, tablet-max)) {
+        @include position-on-screen(fixed, auto, $padding-to-screen-edge, 0, 20px);
+    }
+
+    span {
+        color: $color-secondary;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+        border-radius: $border-radius;
+        transition: all 0.3s;
+    }
+}
+
+.scroll-to-top.hidden {
+    bottom: -100px;
+    transition: all 0.3s ease-in-out;
+}

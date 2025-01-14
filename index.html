@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="fonts/fontAwesome/css/all.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="index.js"></script>
+
+        <title>pictureSplash</title>
+    </head>
+
+    <body>
+
+    <section class="section-dynamic title">
+        <div class="container">
+            <div class="title-text">
+                <img src="/images/splash.png" alt="">
+                <h1><span>picture</span><span>Splash</span></h1>
+                <p>Search for images!</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dynamic" id="gallery">
+        <div class="container">
+            <div id="search-container" class="search-container">
+                <label for="search"></label>
+                <input type="text" id="search" placeholder="Search for images...">
+                <button onclick="searchImages()">Search</button>
+            </div>
+            <div class="content-container">
+
+                <div class="gallery">
+
+                </div>
+                <div class="loader"></div>
+                <div class="no-results">
+                    <p>No results found!</p>
+                </div>
+                <div class="type-something">
+                    <p>Type something to search for images!</p>
+                </div>
+
+                <div class="load-more">
+                    <button id="load-more">Load More <i class="fa fa-long-arrow-down"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!--    <div class="burger-menu">-->
+<!--            <div class="burger-menu-container">-->
+<!--                <div class="burger-menu-icon" onclick="toggleBurgerMenu()">-->
+<!--                    <div class="line1"></div>-->
+<!--                    <div class="line2"></div>-->
+<!--                    <div class="line3"></div>-->
+<!--                </div>-->
+<!--                <div class="burger-menu-list">-->
+<!--                    <div class="burger-menu-list-item neon"><span onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'}); toggleBurgerMenu()">Home</span></div>-->
+<!--                    <div class="burger-menu-list-item neon"><span onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'}); toggleBurgerMenu()">About Me</span></div>-->
+<!--                    <div class="burger-menu-list-item neon"><span onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'}); toggleBurgerMenu()">Projects</span></div>-->
+<!--                    <div class="burger-menu-list-item neon"><span onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'}); toggleBurgerMenu()">Resume</span></div>-->
+<!--                    <div class="burger-menu-list-item neon"><span onclick="document.getElementById('connect').scrollIntoView({behavior: 'smooth'}); toggleBurgerMenu()">Connect</span></div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    <div class="scroll-to-top" onclick="topFunction()" id="toTop">
+        <i class="fa fa-chevron-up"></i>
+    </div>
+
+    <footer>
+        <div class="container">
+<!--            <p>Copyright &copy; 2025 Mateas Andrei. All Rights Reserved.</p>-->
+        </div>
+    </footer>
+    </body>
+</html>
