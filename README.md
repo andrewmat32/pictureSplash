@@ -23,7 +23,7 @@ pictureSplash is a sleek, modern web application that utilizes the Unsplash API 
 
 **pictureSplash** is more than just an image gallery—it's a demonstration of:
 - Proficient use of modern APIs to fetch and handle real-world data.
-- Expertise in creating efficient, user-centric features like infinite scroll and dynamic page updates.
+- Expertise in creating efficient, user-centric features like dynamic page updates.
 - A commitment to balancing performance, design, and functionality in web development.
 
 This project showcases the practical application of API integration, interactive design, and performance tuning, providing a polished and immersive user experience. Deployed on Vercel for rapid performance and scalability, **pictureSplash** is a testament to the power of combining clean code with creative design.
