@@ -934,7 +934,7 @@ body.no-scroll {
 }
 @media screen and (max-width: 767px) {
   .gallery img {
-    height: 200px;
+    height: 300px;
   }
 }
 .gallery img:hover {
@@ -979,10 +979,15 @@ body.no-scroll {
 }
 .fullscreen img {
   height: 80%;
-  width: 90%;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1024px) {
+  .fullscreen img {
+    width: 90%;
+    object-fit: contain;
+  }
 }
 @media screen and (max-width: 767px) {
   .fullscreen img {

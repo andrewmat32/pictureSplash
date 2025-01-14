@@ -128,6 +128,7 @@
 
         @media screen and (max-width: map-get($media-queries, tablet-max)) {
             width: 90%;;
+            object-fit: contain;
         }
 
         @media screen and (max-width: map-get($media-queries, mobile-max)) {
