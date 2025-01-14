@@ -102,6 +102,7 @@ function getUnsplashImages( query = 'nature' )
             console.log( data.total );
             if ( data.results.length === 0 ) {
                 hideLoadMore();
+                showNoResults();
             }
             else
             {
