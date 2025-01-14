@@ -8,7 +8,7 @@ pictureSplash is a sleek, modern web application that utilizes the Unsplash API 
 - Leveraging the Unsplash API to fetch high-quality, diverse images dynamically.
 - Efficient API request handling with pagination support to ensure smooth data loading and interaction.
 
-### Infinite Scroll & "Load More" Functionality:
+### "Load More" Functionality:
 - Users can explore images effortlessly with the ability to load additional content on demand.
 - Optimized loading experience that minimizes initial load times while ensuring responsiveness.
 
